@@ -42,7 +42,7 @@ public class Task1 extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ScriptException {
-       
+
         launch(args);
 
     }
@@ -141,6 +141,12 @@ public class Task1 extends Application {
                 try {
                     String checkInput = input.getText();
 
+                    if (input.getText().isEmpty() || xValue.getText().isEmpty() || xMin.getText().isEmpty() || xMax.getText().isEmpty()) {
+                        JOptionPane pane = new JOptionPane();
+                        JOptionPane.showMessageDialog(pane, "You Must Enter All Fields",
+                                "Warnning Message", JOptionPane.WARNING_MESSAGE);
+                    }
+
                     while (checkInput.contains("^")) {
 
                         int Locate = checkInput.indexOf("^");
@@ -158,7 +164,7 @@ public class Task1 extends Application {
                     if (checkInput.contains("x") && maxXvalue > minXValue) {
 
                         checkInput = checkInput.replaceAll("x", xValue.getText());
-                        
+
                     }
 
                     finalResult = String.valueOf(calC(checkInput));
@@ -170,10 +176,10 @@ public class Task1 extends Application {
                     if (maxXvalue < minXValue) {
                         JOptionPane.showMessageDialog(pane, "Max X Value must be greater than Min X ",
                                 "Warnning Message", JOptionPane.WARNING_MESSAGE);
-                    } 
-                    
-                     JOptionPane.showMessageDialog(pane, "Please Enter Right Equation",
-                                "Warnning Message", JOptionPane.WARNING_MESSAGE);
+                    }
+
+                    JOptionPane.showMessageDialog(pane, "Please Enter Right Equation",
+                            "Warnning Message", JOptionPane.WARNING_MESSAGE);
 
                 }
             }

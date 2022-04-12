@@ -42,8 +42,7 @@ public class Task1 extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ScriptException {
-        // TODO code application logic here
-
+       
         launch(args);
 
     }
@@ -84,7 +83,6 @@ public class Task1 extends Application {
         input.setFont(Font.font("Serif", 20));
 
         Label resLabel = new Label("result :");
-        //gridPane2.add(resLabel, 3, 2);
         gridPane3.add(resLabel, 4, 2);
         resLabel.setStyle("-fx-font: normal bold 50px 'serif'; -fx-text-fill: firebrick; -fx-padding:30px");
 
@@ -115,17 +113,6 @@ public class Task1 extends Application {
 
         gridPane2.add(gridPane3, 4, 1);
 
-//
-//        TextField minX = new TextField();
-//        minX.setPrefWidth(40);
-//        minX.setPrefHeight(40);
-//        gridPane2.add(minX, 3, 2);
-//        
-//        
-//        TextField maxX = new TextField();
-//        maxX.setPrefWidth(40);
-//        maxX.setPrefHeight(40);
-//        gridPane2.add(maxX, 4, 2);
         Button calcButton = new Button("Calculate");
         gridPane2.add(calcButton, 3, 3);
         calcButton.setStyle(" -fx-text-fill: white; -fx-background-color: royalblue; -fx-padding:15px 50px; -fx-font-size:17px;-fx-font: normal bold 20px 'serif'");
@@ -171,7 +158,7 @@ public class Task1 extends Application {
                     if (checkInput.contains("x") && maxXvalue > minXValue) {
 
                         checkInput = checkInput.replaceAll("x", xValue.getText());
-                        System.out.println(checkInput);
+                        
                     }
 
                     finalResult = String.valueOf(calC(checkInput));
